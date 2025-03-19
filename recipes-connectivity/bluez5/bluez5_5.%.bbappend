@@ -79,12 +79,6 @@ SYSTEMD_AUTO_ENABLE = "enable"
 RDEPENDS:${PN}-testtools = ""
 INSANE_SKIP:${PN}-testtools = "file-rdeps"
 
-# From meta-rdk-comcast/recipes-connectivity/bluez/bluez5_5.%.bbappend
-#This file is to patch the bluetooth.service to launch bluetooth daemon after /opt is mounted on the platform
-FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
-SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
-           "
-
 inherit breakpad-wrapper breakpad-logmapper
 DEPENDS:append = " breakpad breakpad-wrapper"
 
