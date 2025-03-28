@@ -1,22 +1,77 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}_${PV}:"
 
-SRC_URI:append = " file://bluez-5.48-kirkstone_compile_errors.patch "
+SRC_URI:append = " \
+    file://bluez-5.48-kirkstone_compile_errors.patch \
+    file://bluez-5.48-003-add-configurable-char-write-value-options.patch \
+    file://bluez-5.48-005-enable_auto_connect_on_all_disconnects.patch \
+    file://bluez-5.48-006-change_cache_clear_timeout.patch \
+    file://bluez-5.48-007-disable_sigpipe_signal.patch \
+    file://bluez-5.48-008-make-storage-dir-runtime-configurable.patch \
+    file://bluez-5.48-009-fix-gatt-characteristic-crash-on-remove.patch \
+    file://bluez-5.48-010-add-configurable-kernel-connection-control.patch \
+    file://bluez-5.48-011-add-configurable-secure-connections.patch \
+    file://bluez-5.48-012-add-configurable-power-off-on-startup.patch \
+    file://bluez-5.48-013-add-configurable-att-le-mtu.patch \
+    file://bluez-5.48-014-add-configurable-delayed-gatt-connection.patch \
+    file://bluez-5.48-015-delete-autoconnect-on-remove.patch\
+    file://bluez-5.48-017-bluetooth_configuration_hardening.patch \
+    file://bluez-5.48-019-improve_firmware_upload_ruwido.patch \
+    file://bluez-5.48-022-enable_bdaddr.patch \
+    file://bluez-5.48-023-enable_discovery_filter.patch \
+    file://bluez-5.48-024-add-remote-device-name-change-event-handler.patch \
+    file://bluez-5.48-027-free-discovery-reply-on-error.patch \
+    file://bluez-5.48-028-crash-in-gatt-client-callback.patch \
+    file://bluez-5.48-029-create_storage_directory_before_starting_service.patch \
+    file://bluez-5.48-032-restore-file-AMLOGIC-1276.patch \
+    file://bluez-5.48-033-enable-debug-logging.patch \
+    file://bluez-5.48-035-avrcp-transport-volume-change.patch \
+    file://bluez-5.48-036-changes_to_fix_crash_during_BT_SIG_tests.patch \
+    file://bluez-5.48-037-bluetooth_avdtp_a2dp_abort.patch \
+    file://bluez-5.48-038-bluez-stream-free-crash-fix.patch \
+    file://bluez-5.48-039-bluetooth_a2dp_ref_negative_abort.patch \
+    file://bluez-5.48-040-bluez-btrmgr-crash.patch \
+    file://bluez-5.48-041-clear_old_cache_list.patch \
+    file://bluez-5.48-043-auto-accept-connection-for_5.10-Kernel.patch \
+    file://bluez-5.48-044-add-up-to-date-battery-service.patch \
+    file://bluez-5.48-045-ensure-bluez-connects-on-bredr-to-audio-devices.patch \
+    file://bluez-5.48-046-prevent-scan-becoming-stuck.patch \
+    file://bluez-5.48-047-Gen4-Crash-avoid.patch \
+    file://bluez-5.48-049-Queue_remove_crash.patch \
+    file://bluez-5.48-050-migrate_ble_pairing_data_to_originalPath.patch \
+    file://bluez-5.48-051-fix-for-incorrect-transaction-label.patch \
+    file://bluez-5.48-052-bt_uuid_to_uuid128-crash.patch \
+    file://bluez-5.48-053-set-ad-flags-and-update-cache-timeout.patch \
+    file://bluez-5.48-054-enable_ccc_callback_crash.patch \
+    file://bluez-5.48-055-kernel-dev-node-delete-create.patch \
+    file://bluez-5.48-056-remove-pairing-failure-cache.patch \
+    file://bluez-5.48-057-stop-scan-getting-stuck-when-adapter-busy.patch \
+    file://bluez-5.48-058-set-le-hid-auto-connect-flags.patch \
+    file://bluez-5.48-059-hci-version-update.patch \
+    file://bluez-5.48-060-unsupport-device-remove.patch \
+    file://bluez-5.48-061-Queue-crash.patch \
+    file://bluez-5.48-062-Add-timer-for-removing-temp-devices.patch \
+    file://bluz5_5.48_gatt_db_service_crash.patch \
+    "
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
-SRC_URI += "file://breakpad.patch"
-SRC_URI += "file://0001-Fix-race-issue-with-tools-directory.patch \
-            file://0001-testtools-fix-SIOCGSTAMP-undeclared-error.patch \
-            file://CVE-2019-8922.patch \
-            file://CVE-2020-27153.patch \
-            file://CVE-2022-0204.patch \
-            file://CVE-2020-0556.patch \
-            file://CVE-2018-10910.patch \
-            file://CVE-2018-10910_I.patch \
-            file://CVE-2019-8921.patch \
-            file://CVE-2022-39176_5.48_fix.patch \
-            file://CVE-2022-39177_5.48_fix.patch \
-            file://CVE-2023-45866.patch \
-            "
+SRC_URI:append = " \
+    file://breakpad.patch \
+    file://0001-Fix-race-issue-with-tools-directory.patch \
+    file://0001-testtools-fix-SIOCGSTAMP-undeclared-error.patch \
+    file://0002-libexecdir-location.patch \
+    file://CVE-2019-8922.patch \
+    file://CVE-2020-27153.patch \
+    file://CVE-2022-0204.patch \
+    file://CVE-2020-0556.patch \
+    file://0002-Fixing-connection-failure-due-to-CVE-2020-0556.patch \
+    file://CVE-2018-10910.patch \
+    file://CVE-2018-10910_I.patch \
+    file://bluez-5.48-034-check-if-dir-is-a-file.patch \
+    file://CVE-2019-8921.patch \
+    file://CVE-2022-39176_5.48_fix.patch \
+    file://CVE-2022-39177_5.48_fix.patch \
+    file://CVE-2023-45866.patch \
+    "
 # Removed testtools package as it has a depedncy with python
 PACKAGES:remove = "${PN}-testtools"
 
