@@ -38,6 +38,7 @@ SRC_URI:append = " \
     file://bluez-5.48-047-Gen4-Crash-avoid.patch \
     file://bluez-5.48-049-Queue_remove_crash.patch \
     file://bluez-5.48-050-migrate_ble_pairing_data_to_originalPath.patch \
+    file://bt_original_path_setup.sh \
     file://bluez-5.48-051-fix-for-incorrect-transaction-label.patch \
     file://bluez-5.48-052-bt_uuid_to_uuid128-crash.patch \
     file://bluez-5.48-053-set-ad-flags-and-update-cache-timeout.patch \
