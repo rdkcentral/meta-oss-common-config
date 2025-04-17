@@ -31,6 +31,8 @@ RREPLACES:${PN} += "${PN}-systemd"
 RCONFLICTS:${PN} += "${PN}-systemd"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
+SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
+           "
 
 do_install:append() {
     mkdir -p ${D}${includedir}/bluetooth/audio/
