@@ -51,6 +51,8 @@ SRC_URI:append = " \
     file://bluez-5.48-060-unsupport-device-remove.patch \
     file://bluez-5.48-061-Queue-crash.patch \
     file://bluez-5.48-062-Add-timer-for-removing-temp-devices.patch \
+    file://bluez-5.48-063-stop-gatt-db-reset-on-early-disconnection.patch \
+    file://bluez-5.48-064-allow-large-sevices-changed-gatt.patch \
     file://bluz5_5.48_gatt_db_service_crash.patch \
     "
 
