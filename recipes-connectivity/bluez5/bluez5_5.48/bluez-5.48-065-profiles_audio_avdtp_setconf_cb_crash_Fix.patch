@@ -17,7 +17,7 @@ Index: bluez-5.48/profiles/audio/avdtp.c
  {
  	struct conf_rej rej;
  	struct avdtp_local_sep *sep;
-+	if(session == NULL){
++	if(session == NULL){;
 +	        error("session is NULL"); // Handle session if NULL
 +	        DBG("session is NUll");
 +	        return;
