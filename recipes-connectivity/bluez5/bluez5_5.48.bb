@@ -57,12 +57,10 @@ NOINST_TOOLS_BT ?= " \
     tools/advtest \
     tools/seq2bseq \
     tools/nokfw \
-    tools/create-image \
     tools/eddystone \
     tools/ibeacon \
     tools/btgatt-client \
     tools/btgatt-server \
-    tools/test-runner \
     tools/check-selftest \
     tools/gatt-service \
     profiles/iap/iapd \
