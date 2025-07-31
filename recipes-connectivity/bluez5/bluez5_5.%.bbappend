@@ -32,6 +32,7 @@ RCONFLICTS:${PN} += "${PN}-systemd"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
+            file://0001-RDK-fix-issue-in-bluez5.54-1-1.patch \
            "
 
 do_install:append() {
