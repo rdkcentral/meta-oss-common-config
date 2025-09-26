@@ -54,6 +54,8 @@ SRC_URI:append = " \
     file://bluez-5.48-063-stop-gatt-db-reset-on-early-disconnection.patch \
     file://bluez-5.48-064-allow-large-sevices-changed-gatt.patch \
     file://bluz5_5.48_gatt_db_service_crash.patch \
+    file://bluez-5.48-065-unregister-batt_io_ccc_written_cb-check-session.patch \
+    file://bluez-5.48-066-remove-unused-binaries.patch \
     "
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
