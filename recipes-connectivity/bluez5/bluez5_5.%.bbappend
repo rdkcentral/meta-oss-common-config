@@ -31,8 +31,8 @@ RREPLACES:${PN} += "${PN}-systemd"
 RCONFLICTS:${PN} += "${PN}-systemd"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
-SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
-           "
+#SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
+#           "
 
 do_install:append() {
     mkdir -p ${D}${includedir}/bluetooth/audio/
@@ -86,7 +86,7 @@ inherit breakpad-wrapper breakpad-logmapper
 DEPENDS:append = " breakpad breakpad-wrapper"
 
 BREAKPAD_BIN:append = " bluetoothd"
-PACKAGECONFIG[breakpad] = "--enable-breakpad,,breakpad,"
+#PACKAGECONFIG[breakpad] = "--enable-breakpad,,breakpad,"
 # generating minidumps
 PACKAGECONFIG:append = " breakpad"
 # Breakpad processname and logfile mapping
