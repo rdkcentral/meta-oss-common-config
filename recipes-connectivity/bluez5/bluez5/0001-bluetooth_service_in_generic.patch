@@ -4,14 +4,15 @@ Subject: [PATCH] DELIA-24590 RDK-27733: Removing do_postpatch from Bluetooth Rec
         add patch file for modifying bluetooth.service.
 Source: COMCAST
 Signed-off-by: mselva006c <mani_selvaraj@comcast.com>
+Upstream-Status: Pending
 ---
  src/bluetooth.service.in | 4 +++-
  1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/src/bluetooth.service.in b/src/bluetooth.service.in
-index f9faaa4..18e5687 100644
---- a/src/bluetooth.service.in
-+++ b/src/bluetooth.service.in
+Index: bluez-5.72/src/bluetooth.service.in
+===================================================================
+--- bluez-5.72.orig/src/bluetooth.service.in
++++ bluez-5.72/src/bluetooth.service.in
 @@ -1,5 +1,7 @@
  [Unit]
  Description=Bluetooth service
@@ -28,4 +29,4 @@ index f9faaa4..18e5687 100644
 +Restart=always
  CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
  LimitNPROC=1
- ProtectHome=true
+ 
