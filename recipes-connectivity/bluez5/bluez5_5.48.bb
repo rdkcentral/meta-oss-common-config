@@ -65,3 +65,5 @@ NOINST_TOOLS_BT ?= " \
     tools/gatt-service \
     profiles/iap/iapd \
 "
+
+PR = "r5"
