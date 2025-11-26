@@ -56,6 +56,7 @@ SRC_URI:append = " \
     file://bluz5_5.48_gatt_db_service_crash.patch \
     file://bluez-5.48-065-unregister-batt_io_ccc_written_cb-check-session.patch \
     file://bluez-5.48-066-remove-unused-binaries.patch \
+    file://bluez-5.48-067-RDKOSS-553-stream-use-after-free.patch \
     "
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
