@@ -34,6 +34,8 @@ FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
            "
 
+CFLAGS:append = " -DBT_UNSUPPORTED_GAMEPAD_ENABLED"
+
 do_install:append() {
     mkdir -p ${D}${includedir}/bluetooth/audio/
     install -m 0644 ${S}/profiles/audio/a2dp-codecs.h ${D}${includedir}/bluetooth/audio/
