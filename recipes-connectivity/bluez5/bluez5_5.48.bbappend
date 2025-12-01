@@ -54,8 +54,10 @@ SRC_URI:append = " \
     file://bluez-5.48-063-stop-gatt-db-reset-on-early-disconnection.patch \
     file://bluez-5.48-064-allow-large-sevices-changed-gatt.patch \
     file://bluz5_5.48_gatt_db_service_crash.patch \
-    file://bluez-5.48-065-unregister-batt_io_ccc_written_cb-check-session.patch \
-    file://bluez-5.48-066-remove-unused-binaries.patch \
+    file://bluez-5.48-065-add-unsupport-device-remove-for-501.patch \
+    file://bluez-5.48-066-unregister-batt_io_ccc_written_cb-check-session.patch \
+    file://bluez-5.48-067-remove-unused-binaries.patch \
+    file://bluez-5.48-068-RDKOSS-553-stream-use-after-free.patch \
     "
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
