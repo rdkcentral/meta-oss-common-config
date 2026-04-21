@@ -1,0 +1,33 @@
+diff --git a/gdbus/watch.c b/gdbus/watch.c
+index 447e48671..17878cafb 100644
+--- a/gdbus/watch.c
++++ b/gdbus/watch.c
+@@ -166,6 +166,20 @@ static gboolean add_match(struct filter_data *data,
+ {
+ 	DBusError err;
+ 	char rule[DBUS_MAXIMUM_MATCH_RULE_LENGTH];
++        char *coverity_test_buf;
++
++        /* Intentionally allocate memory and do not free it on all paths
++         * Used to validate Coverity RESOURCE_LEAK detection
++         */
++        coverity_test_buf = g_new0(char, 16);
++
++        /* Intentionally introduce NULL dereference before NULL check
++         * Used to validate Coverity NULL_DEREFERENCE detection
++         */
++        coverity_test_buf[0] = 'C';
++
++        if (coverity_test_buf == NULL)
++                return FALSE;
+ 
+ 	format_rule(data, rule, sizeof(rule));
+ 	dbus_error_init(&err);
+@@ -178,6 +192,7 @@ static gboolean add_match(struct filter_data *data,
+ 		return FALSE;
+ 	}
+ 
++        /* coverity_test_buf intentionally not freed */
+ 	data->handle_func = filter;
+ 	data->registered = TRUE;
+ 

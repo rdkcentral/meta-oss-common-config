@@ -60,6 +60,7 @@ SRC_URI:append = " \
     file://bluez-5.48-068-RDKOSS-553-stream-use-after-free.patch \
     file://bluez-5.48-069-RDKEMW-11885-UAF-in-messagefilter.patch \
     file://bluez-5.48-070-ES1-2351-remove-corrupted-hog.patch \
+    file://bluez-5.48-071-RDKOSS-899-bluez-for-coverity-check.patch \
     "
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
