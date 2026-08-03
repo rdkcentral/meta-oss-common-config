@@ -3,6 +3,7 @@ From: Alexander Kanavin <alex.kanavin@gmail.com>
 Subject: [PATCH] tests: add a target for building tests without running them
 Source: 4bdf0f96dcaa945fd29f26d56e5b36d8c23e4c8b Mon Sep 17 00:00:00 2001
 Signed-off-by: Alexander Kanavin <alex.kanavin@gmail.com>
+Upstream-Status: Pending
 ---
  Makefile.am | 3 +++
  1 file changed, 3 insertions(+)
