@@ -1,4 +1,4 @@
-inherit systemd syslog-ng-config-gen logrotate_config
+inherit systemd syslog-ng-config-gen  ${@bb.utils.contains("DISTRO_FEATURES", "wrynose", "logrotate", "logrotate_config", d)}
 
 
 SYSLOG-NG_FILTER:client += "bluetooth"
@@ -22,7 +22,6 @@ EXTRA_OECONF:append:client += " --localstatedir=/opt"
 
 EXTRA_OECONF:append:broadband += " --localstatedir=/opt/secure"
 
-PACKAGECONFIG:append = " experimental"
 EXTRA_OECONF += " --with-systemdsystemunitdir=${systemd_unitdir}/system"
 
 RDEPENDS:${PN} += "${PN}-noinst-tools"
@@ -31,8 +30,8 @@ RREPLACES:${PN} += "${PN}-systemd"
 RCONFLICTS:${PN} += "${PN}-systemd"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
-SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
-           "
+#SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
+#           "
 
 CFLAGS:append = " -DBT_UNSUPPORTED_GAMEPAD_ENABLED"
 
@@ -88,9 +87,7 @@ inherit breakpad-wrapper breakpad-logmapper
 DEPENDS:append = " breakpad breakpad-wrapper"
 
 BREAKPAD_BIN:append = " bluetoothd"
-PACKAGECONFIG[breakpad] = "--enable-breakpad,,breakpad,"
 # generating minidumps
-PACKAGECONFIG:append = " breakpad"
 # Breakpad processname and logfile mapping
 BREAKPAD_LOGMAPPER_PROCLIST = "bluetoothd"
 BREAKPAD_LOGMAPPER_LOGLIST = "bluez.log"
