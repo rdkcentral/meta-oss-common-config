@@ -30,8 +30,8 @@ RREPLACES:${PN} += "${PN}-systemd"
 RCONFLICTS:${PN} += "${PN}-systemd"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
-#SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
-#           "
+SRC_URI += "file://0001-bluetooth_service_in_generic.patch \
+           "
 
 CFLAGS:append = " -DBT_UNSUPPORTED_GAMEPAD_ENABLED"
 
